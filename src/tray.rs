@@ -67,12 +67,12 @@ fn make_tray() -> hbb_common::ResultType<()> {
                 translate("Service is running".to_owned()),
             )
         } else {
-            format!(
-                "{} - {}\n{}",
-                crate::get_app_name(),
-                translate("Ready".to_owned()),
-                translate("{".to_string() + &format!("{count}") + "} sessions"),
-            )
+            //format!(
+                //"{} - {}\n{}",
+                //crate::get_app_name(),
+                //translate("Ready".to_owned()),
+                //translate("{".to_string() + &format!("{count}") + "} sessions"),
+            //)
         }
     };
     let mut _tray_icon: Arc<Mutex<Option<TrayIcon>>> = Default::default();

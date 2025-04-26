@@ -92,26 +92,26 @@ class _DesktopHomePageState extends State<DesktopHomePage>
       buildTip(context),
       if (!isOutgoingOnly) buildIDBoard(context),
       if (!isOutgoingOnly) buildPasswordBoard(context),
-      FutureBuilder<Widget>(
-        future: Future.value(
-            Obx(() => buildHelpCards(stateGlobal.updateUrl.value))),
-        builder: (_, data) {
-          if (data.hasData) {
-            if (isIncomingOnly) {
-              if (isInHomePage()) {
-                Future.delayed(Duration(milliseconds: 300), () {
-                  _updateWindowSize();
-                });
-              }
-            }
-            return data.data!;
-          } else {
-            return const Offstage();
-          }
-        },
-      ),
-      buildPluginEntry(),
-    ];
+    //   FutureBuilder<Widget>(
+    //     // future: Future.value(
+    //     //     Obx(() => buildHelpCards(stateGlobal.updateUrl.value))),
+    //     builder: (_, data) {
+    //       if (data.hasData) {
+    //         if (isIncomingOnly) {
+    //           if (isInHomePage()) {
+    //             Future.delayed(Duration(milliseconds: 300), () {
+    //               _updateWindowSize();
+    //             });
+    //           }
+    //         }
+    //         return data.data!;
+    //       } else {
+    //         return const Offstage();
+    //       }
+    //     },
+    //   ),
+    //   buildPluginEntry(),
+    // ];
     if (isIncomingOnly) {
       children.addAll([
         Divider(),
@@ -396,18 +396,18 @@ class _DesktopHomePageState extends State<DesktopHomePage>
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Column(
-            children: [
-              if (!isOutgoingOnly)
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    translate("Your Desktop"),
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                ),
-            ],
-          ),
+          // Column(
+          //   children: [
+          //     if (!isOutgoingOnly)
+          //       Align(
+          //         alignment: Alignment.centerLeft,
+          //         child: Text(
+          //           translate("Your Desktop"),
+          //           style: Theme.of(context).textTheme.titleLarge,
+          //         ),
+          //       ),
+          //   ],
+          // ),
           SizedBox(
             height: 10.0,
           ),
