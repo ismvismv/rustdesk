@@ -346,12 +346,12 @@ class _ConnectionPageState extends State<ConnectionPage> {
         ),
       ),
     );
-    // final child = Column(children: [
-    //   if (isWebDesktop)
-    //     getConnectionPageTitle(context, true)
-    //         .marginOnly(bottom: 10, top: 15, left: 12),
-    //   w
-    // ]);
+    final child = Column(children: [
+      if (isWebDesktop)
+        getConnectionPageTitle(context, true)
+            .marginOnly(bottom: 10, top: 15, left: 12),
+      w
+    ]);
     return Align(
         alignment: Alignment.topCenter,
         child: Container(constraints: kMobilePageConstraints, child: child));

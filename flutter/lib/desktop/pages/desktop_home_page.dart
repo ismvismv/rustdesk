@@ -79,22 +79,22 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     final isIncomingOnly = bind.isIncomingOnly();
     final isOutgoingOnly = bind.isOutgoingOnly();
     final children = <Widget>[
-      // if (!isOutgoingOnly) buildPresetPasswordWarning(),
-      // if (bind.isCustomClient())
-      //   Align(
-      //     alignment: Alignment.center,
-      //     child: loadPowered(context),
-      //   ),
-      // Align(
-      //   alignment: Alignment.center,
-      //   child: loadLogo(),
-      // ),
-      // buildTip(context),
-      // if (!isOutgoingOnly) buildIDBoard(context),
-      // if (!isOutgoingOnly) buildPasswordBoard(context),
+      if (!isOutgoingOnly) buildPresetPasswordWarning(),
+      if (bind.isCustomClient())
+        Align(
+          alignment: Alignment.center,
+          child: loadPowered(context),
+        ),
+      Align(
+        alignment: Alignment.center,
+        child: loadLogo(),
+      ),
+      buildTip(context),
+      if (!isOutgoingOnly) buildIDBoard(context),
+      if (!isOutgoingOnly) buildPasswordBoard(context),
       // FutureBuilder<Widget>(
-      //   // future: Future.value(
-      //   //     Obx(() => buildHelpCards(stateGlobal.updateUrl.value))),
+      //   future: Future.value(
+      //       Obx(() => buildHelpCards(stateGlobal.updateUrl.value))),
       //   builder: (_, data) {
       //     if (data.hasData) {
       //       if (isIncomingOnly) {
@@ -110,7 +110,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
       //     }
       //   },
       // ),
-      // buildPluginEntry(),
+      buildPluginEntry(),
     ];
     if (isIncomingOnly) {
       children.addAll([
@@ -179,12 +179,12 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     );
   }
 
-  buildRightPane(BuildContext context) {
-    return Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
-      child: ConnectionPage(),
-    );
-  }
+  // buildRightPane(BuildContext context) {
+  //   return Container(
+  //     color: Theme.of(context).scaffoldBackgroundColor,
+  //     child: ConnectionPage(),
+  //   );
+  // }
 
   buildIDBoard(BuildContext context) {
     final model = gFFI.serverModel;
@@ -396,18 +396,18 @@ class _DesktopHomePageState extends State<DesktopHomePage>
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Column(
-          //   children: [
-          //     if (!isOutgoingOnly)
-          //       Align(
-          //         alignment: Alignment.centerLeft,
-          //         child: Text(
-          //           translate("Your Desktop"),
-          //           style: Theme.of(context).textTheme.titleLarge,
-          //         ),
-          //       ),
-          //   ],
-          // ),
+          Column(
+            children: [
+              if (!isOutgoingOnly)
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    translate("Your Desktop"),
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ),
+            ],
+          ),
           SizedBox(
             height: 10.0,
           ),
